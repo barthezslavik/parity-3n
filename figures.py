@@ -74,7 +74,7 @@ ax.scatter([2, 2, 2], [p_switch_run(2 * eps, n, budget), p_switch_fixed_retried(
            color=[ORANGE, PINK, BLUE], s=30, zorder=4)
 ax.axvline(1, color=MUTED, lw=1, ls=":"); ax.text(0.97, 0.62, "threshold", color=MUTED, ha="right")
 ax.axvline(2, color=GRID, lw=1)
-ax.set_xlabel("true divergence rate, × threshold (0.1%)"); ax.set_ylabel("chance to switch (orange, pink: a month; blue: one window)")
+ax.set_xlabel("true divergence rate, × threshold (0.1%)"); ax.set_ylabel("chance to switch")
 ax.yaxis.set_major_formatter(lambda v, _: f"{v:.0%}"); ax.set_ylim(0, 1.02)
 ax.set_title("'N clean in a row' switches a class 2× worse than threshold 36% of the time", loc="left", fontsize=13, color=INK)
 clean(ax); ax.grid(axis="y", color=GRID, lw=0.6)
