@@ -1,0 +1,19 @@
+number,kind,days_from_merge,what_broke,root_cause,found_by,blind_spot,subtype,shadow_diff_would_catch
+30678,issue,0.1,HMR crash in release: `Cannot destructure property 'isLikelyComponentType'`,side effect (`insert_stale`) inside `debug_assert!` is not executed in release; Zig `assert` is a function and always runs its argument,user (canary),B,build mode,yes
+30693,issue,0.2,`bun update -i` prints `air` instead of `ai`,no comptime: `Output::pretty` rewrites `<r>` markers inside substituted arguments,user,B,formatting/comptime,yes (needs TTY capture)
+30717,issue,0.4,`bun build --compile` + `bun:ffi dlopen()` of an embedded library fails,port shipped a stub where Zig materialized the embedded library,user,A,untested input path,yes
+30789,issue,1.1,`bun update --latest` arrows become mojibake,template copied byte-by-byte via `b as char` (UTF-8 read as Latin-1),user,B,formatting/comptime,yes (needs TTY capture)
+30960,issue,3.8,`Bun.password.hash` silently raises memoryCost 3→8,argon2 implementation replaced; port silently clamps m<8 and never recorded it,user,D,unrecorded intentional difference,yes (needs salt normalization)
+31012,pr,4.5,`bun run build` with empty script exits 0 instead of 1,helper drops only empty keys; Zig also dropped empty values,maintainer,B,helper semantics,yes
+31188,issue,6.2,`Blob.text()` on UTF-16 BOM + odd byte count panics,Zig `@divTrunc` dropped the trailing byte; `bytemuck::cast_slice` panics,maintainer (hardening pass),B,helper semantics,unclear (rare input)
+31401,issue,11.5,`export default function(){}` in `1.ts` → SyntaxError,identifier formatter no longer prefixes `_` before a digit,user,B,helper semantics,yes
+31503,issue,14.1,`bun --bun` on large builds panics `len 4095 index 4095`,placeholder block size (64 vs 2048) left by the port; Rust bounds check turned a silent out-of-bounds write (unchecked in Zig ReleaseFast) into a panic,user,B,build mode,yes (at real monorepo scale)
+31572,pr,15.2,"SQL: columns like `2024_01` become indexes, named keys lost",column-name classification lost in the port,bot PR,B,helper semantics,yes (needs DB mirroring)
+31575,issue,15.3,`--compile`: `Bun.embeddedFiles[].name` loses `[dir]`; ENOENT on Windows,port deliberately normalizes a scratch copy instead of mutating in place; not recorded,user,D,unrecorded intentional difference,yes
+31636,issue,17.6,`bun run --parallel` runs a garbage command (exit 127),use-after-free: ownership of PackageJSON changed in the port,user,E,state/lifetime,yes (needs repeated runs)
+32016,issue,26.4,resolver panics on `C:/` or a file directly in `/`,Zig `assertf` stripped in release; Rust `assert!` always runs,user (crash report),B,build mode,yes
+32348,pr,32.4,`crypto.randomInt` does a syscall per call (slowdown),Zig used BoringSSL RAND_bytes; port calls getrandom directly,bot PR,E,performance,"no (outputs random, only speed differs)"
+32686,issue,42.0,`Bun.build({define:{X:'./src/worker.ts'}})` → Syntax Error,bug in the ported JSON lexer,user,B,ported lexer,yes
+33014,pr,45.3,"`capacity overflow` crash in `fs.readFile(...,'utf8')` (Windows)",Zig returned error.OutOfMemory; Rust `Vec::with_capacity` panics,crash reporter (Sentry),B,allocation panics instead of error,unclear (huge inputs)
+33303,pr,50.0,`fs.watch` on macOS segfaults when closed from a callback,aliased `&mut` across threads (UB absent in Zig),CI flake,E,timing/threads,no (race)
+35644,pr,72.1,assets placed in `Browser/` instead of `browser/`,port prints the enum variant name instead of Zig `@tagName`,incidental (other fix),B,formatting/comptime,yes

@@ -1,0 +1,14 @@
+
+######## new = C
+runtime     N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=491 UB=0.1177 | k_doc=22 UB=0.0077 | k_beh=12 UB=0.0050 | k_new=0 UB=0.0010 | port-regr=0 | {'DOC': 482, 'FORMAT-undoc': 12, 'OLDBUG': 10}
+bundler     N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=3542 UB=0.7838 | k_doc=895 UB=0.2084 | k_beh=1 UB=0.0014 | k_new=0 UB=0.0010 | port-regr=0 | {'DOC': 2647, 'EQUIV': 894, 'FORMAT-undoc': 1}
+transpiler  N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=116 UB=0.0311 | k_doc=84 UB=0.0234 | k_beh=30 UB=0.0098 | k_new=15 UB=0.0058 | port-regr=0 | {'EQUIV': 44, 'DOC': 32, 'OLDBUG': 10, 'FORMAT-undoc': 15, 'NEW': 15}
+testrunner  N=4603 noise(A!=B)=240 (5.21%) excl=0 n_eff=4363 | k_pre=1297 UB=0.3137 | k_doc=176 UB=0.0478 | k_beh=176 UB=0.0478 | k_new=6 UB=0.0033 | port-regr=0 | {'DOC': 1017, 'FORMAT-undoc': 170, 'NOISE': 112, 'NEW': 6}
+utils       N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=1337 UB=0.3063 | k_doc=2 UB=0.0018 | k_beh=2 UB=0.0018 | k_new=2 UB=0.0018 | port-regr=0 | {'DOC': 1335, 'KNOWN-undoc': 2}
+
+######## new = C2
+runtime     N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=44 UB=0.0135 | k_doc=44 UB=0.0135 | k_beh=44 UB=0.0135 | k_new=0 UB=0.0010 | port-regr=44 | {'KNOWN-port': 44, 'DOC': 15}
+bundler     N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=0 UB=0.0010 | k_doc=0 UB=0.0010 | k_beh=0 UB=0.0010 | k_new=0 UB=0.0010 | port-regr=0 | {}
+transpiler  N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=57 UB=0.0167 | k_doc=57 UB=0.0167 | k_beh=47 UB=0.0142 | k_new=0 UB=0.0010 | port-regr=47 | {'KNOWN-port': 47, 'EQUIV': 10}
+testrunner  N=4603 noise(A!=B)=240 (5.21%) excl=0 n_eff=4363 | k_pre=879 UB=0.2160 | k_doc=797 UB=0.1967 | k_beh=797 UB=0.1967 | k_new=0 UB=0.0011 | port-regr=754 | {'KNOWN-port': 754, 'FORMAT-undoc': 43, 'NOISE': 82, 'DOC': 13}
+utils       N=4603 noise(A!=B)=0 (0.00%) excl=0 n_eff=4603 | k_pre=109 UB=0.0294 | k_doc=109 UB=0.0294 | k_beh=109 UB=0.0294 | k_new=0 UB=0.0010 | port-regr=109 | {'KNOWN-port': 109}

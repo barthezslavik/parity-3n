@@ -1,0 +1,301 @@
+{
+ "C/runtime": {
+  "cls": "runtime",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 504,
+  "w1": 13,
+  "k": 491,
+  "n_eff": 4603,
+  "ub": 0.11770356852586132,
+  "switch": false,
+  "norm": {
+   "N2": 1340,
+   "N1": 2066
+  },
+  "cpu_sec": 2005,
+  "buckets": {
+   "DOC": 482,
+   "FORMAT-undoc": 12,
+   "OLDBUG": 10
+  },
+  "k_pre": 491,
+  "ub_pre": 0.11770356852586132,
+  "k_doc": 22,
+  "ub_doc": 0.0077228104639396455,
+  "k_beh": 12,
+  "ub_beh": 0.0049519926246748,
+  "k_new": 0,
+  "ub_new": 0.0009999711673583898,
+  "k_reg": 0
+ },
+ "C/bundler": {
+  "cls": "bundler",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 3542,
+  "w1": 0,
+  "k": 3542,
+  "n_eff": 4603,
+  "ub": 0.783810620371909,
+  "switch": false,
+  "norm": {
+   "N1": 1533
+  },
+  "cpu_sec": 1147,
+  "buckets": {
+   "DOC": 2647,
+   "EQUIV": 894,
+   "FORMAT-undoc": 1
+  },
+  "k_pre": 3542,
+  "ub_pre": 0.783810620371909,
+  "k_doc": 895,
+  "ub_doc": 0.20837850120155027,
+  "k_beh": 1,
+  "ub_beh": 0.0014412964968958711,
+  "k_new": 0,
+  "ub_new": 0.0009999711673583898,
+  "k_reg": 0
+ },
+ "C/transpiler": {
+  "cls": "transpiler",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 116,
+  "w1": 0,
+  "k": 116,
+  "n_eff": 4603,
+  "ub": 0.03110809786134712,
+  "switch": false,
+  "norm": {
+   "N1": 921
+  },
+  "cpu_sec": 223,
+  "buckets": {
+   "EQUIV": 44,
+   "DOC": 32,
+   "OLDBUG": 10,
+   "FORMAT-undoc": 15,
+   "NEW": 15
+  },
+  "k_pre": 116,
+  "ub_pre": 0.03110809786134712,
+  "k_doc": 84,
+  "ub_doc": 0.02338146621203097,
+  "k_beh": 30,
+  "ub_beh": 0.009846791428454005,
+  "k_new": 15,
+  "ub_new": 0.0058024714981223064,
+  "k_reg": 0
+ },
+ "C/testrunner": {
+  "cls": "testrunner",
+  "N": 4603,
+  "noise": 240,
+  "excluded": 0,
+  "div_raw": 1305,
+  "w1": 8,
+  "k": 1297,
+  "n_eff": 4363,
+  "ub": 0.31366382477770166,
+  "switch": false,
+  "norm": {
+   "N2": 13809,
+   "N3": 13809,
+   "N1": 9729
+  },
+  "cpu_sec": 2642,
+  "buckets": {
+   "DOC": 1017,
+   "FORMAT-undoc": 170,
+   "NOISE": 112,
+   "NEW": 6
+  },
+  "k_pre": 1297,
+  "ub_pre": 0.31366382477770166,
+  "k_doc": 176,
+  "ub_doc": 0.04781214157755482,
+  "k_beh": 176,
+  "ub_beh": 0.04781214157755482,
+  "k_new": 6,
+  "ub_new": 0.003336308168066311,
+  "k_reg": 0
+ },
+ "C/utils": {
+  "cls": "utils",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 1337,
+  "w1": 0,
+  "k": 1337,
+  "n_eff": 4603,
+  "ub": 0.30631385126889527,
+  "switch": false,
+  "norm": {},
+  "cpu_sec": 357,
+  "buckets": {
+   "DOC": 1335,
+   "KNOWN-undoc": 2
+  },
+  "k_pre": 1337,
+  "ub_pre": 0.30631385126889527,
+  "k_doc": 2,
+  "ub_doc": 0.0018249184932310804,
+  "k_beh": 2,
+  "ub_beh": 0.0018249184932310804,
+  "k_new": 2,
+  "ub_new": 0.0018249184932310804,
+  "k_reg": 0
+ },
+ "C2/runtime": {
+  "cls": "runtime",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 59,
+  "w1": 15,
+  "k": 44,
+  "n_eff": 4603,
+  "ub": 0.013455639045180993,
+  "switch": false,
+  "norm": {
+   "N2": 1392,
+   "N1": 2074
+  },
+  "cpu_sec": 2005,
+  "buckets": {
+   "KNOWN-port": 44,
+   "DOC": 15
+  },
+  "k_pre": 44,
+  "ub_pre": 0.013455639045180993,
+  "k_doc": 44,
+  "ub_doc": 0.013455639045180993,
+  "k_beh": 44,
+  "ub_beh": 0.013455639045180993,
+  "k_new": 0,
+  "ub_new": 0.0009999711673583898,
+  "k_reg": 44
+ },
+ "C2/bundler": {
+  "cls": "bundler",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 0,
+  "w1": 0,
+  "k": 0,
+  "n_eff": 4603,
+  "ub": 0.0009999711673583898,
+  "switch": 1.0,
+  "norm": {
+   "N1": 1533
+  },
+  "cpu_sec": 1147,
+  "buckets": {},
+  "k_pre": 0,
+  "ub_pre": 0.0009999711673583898,
+  "k_doc": 0,
+  "ub_doc": 0.0009999711673583898,
+  "k_beh": 0,
+  "ub_beh": 0.0009999711673583898,
+  "k_new": 0,
+  "ub_new": 0.0009999711673583898,
+  "k_reg": 0
+ },
+ "C2/transpiler": {
+  "cls": "transpiler",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 57,
+  "w1": 0,
+  "k": 57,
+  "n_eff": 4603,
+  "ub": 0.016728775253566138,
+  "switch": false,
+  "norm": {
+   "N1": 921
+  },
+  "cpu_sec": 223,
+  "buckets": {
+   "KNOWN-port": 47,
+   "EQUIV": 10
+  },
+  "k_pre": 57,
+  "ub_pre": 0.016728775253566138,
+  "k_doc": 57,
+  "ub_doc": 0.016728775253566138,
+  "k_beh": 47,
+  "ub_beh": 0.014216421634020631,
+  "k_new": 0,
+  "ub_new": 0.0009999711673583898,
+  "k_reg": 47
+ },
+ "C2/testrunner": {
+  "cls": "testrunner",
+  "N": 4603,
+  "noise": 240,
+  "excluded": 0,
+  "div_raw": 892,
+  "w1": 13,
+  "k": 879,
+  "n_eff": 4363,
+  "ub": 0.2159765653879583,
+  "switch": false,
+  "norm": {
+   "N2": 13809,
+   "N3": 13809,
+   "N1": 9729
+  },
+  "cpu_sec": 2642,
+  "buckets": {
+   "KNOWN-port": 754,
+   "FORMAT-undoc": 43,
+   "NOISE": 82,
+   "DOC": 13
+  },
+  "k_pre": 879,
+  "ub_pre": 0.2159765653879583,
+  "k_doc": 797,
+  "ub_doc": 0.1966822184426082,
+  "k_beh": 797,
+  "ub_beh": 0.1966822184426082,
+  "k_new": 0,
+  "ub_new": 0.0010549485789120988,
+  "k_reg": 754
+ },
+ "C2/utils": {
+  "cls": "utils",
+  "N": 4603,
+  "noise": 0,
+  "excluded": 0,
+  "div_raw": 109,
+  "w1": 0,
+  "k": 109,
+  "n_eff": 4603,
+  "ub": 0.029428787885396785,
+  "switch": false,
+  "norm": {
+   "N2": 35
+  },
+  "cpu_sec": 357,
+  "buckets": {
+   "KNOWN-port": 109
+  },
+  "k_pre": 109,
+  "ub_pre": 0.029428787885396785,
+  "k_doc": 109,
+  "ub_doc": 0.029428787885396785,
+  "k_beh": 109,
+  "ub_beh": 0.029428787885396785,
+  "k_new": 0,
+  "ub_new": 0.0009999711673583898,
+  "k_reg": 109
+ }
+}
