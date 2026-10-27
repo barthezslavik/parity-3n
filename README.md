@@ -18,7 +18,8 @@ Clopper–Pearson upper bound on the rate of unexplained divergences between old
 - k = 0 divergences: N = ln(1/δ)/ε, i.e. ~3/ε at δ = 5% (the textbook "rule of three"; the application is the point).
 - K classes switched together under one family-wise δ: N = ln(K/δ)/ε.
 - Count sessions (deduplicated by input fingerprint), not requests. Window ≥ 1 week, one code/config version.
-- A divergence counts only where two copies of the old system agree (A = B) and the new one differs.
+- A divergence counts only where two copies of the old system agree (A = B), two copies of the new one agree (C = C′),
+  and new differs from old.
 - A failed window is closed by a new code version or a registry entry for an intentional difference — **never by rerunning it**.
 
 ```
@@ -68,14 +69,19 @@ inputs with fixed seeds. Each session runs Bun 1.3.14 (Zig) twice, the npm canar
 (1.3.14-canary.1+19d8ade2c, 2026-05-14), and Bun 1.4.0 (Rust). 23,015 sessions, 92,060 CLI calls, ~20 minutes on
 macOS arm64.
 
-- **Merge-day canary vs Zig:** the bundler passes (0 divergences, bound 0.100%); the other four classes fail. Found
-  without hints: #31188 (panic, 44 sessions), #31401 (47), the #30693 family (754), #31012 (74), and a semver
-  `unreachable` panic fixed in PR #31234 (35) that is not in the 18-regression list. 9 of 12 offline repros diverge.
+- **Merge-day canary (npm, merge+1 commit) vs Zig:** the bundler passes (0 divergences, bound 0.100%); the other four
+  classes fail. Port regressions in the divergent sessions (first hit = session index in its class): #31401 (#6, 47
+  sessions), the #30693 family (#6, 754), #31188 (#23, 44), a semver `unreachable` panic fixed in PR #31234 (#93, 35;
+  not in the 18-regression list), #31012 (#151, 74). 9 of 12 offline repros diverge.
+- **Caveat:** the generators were written after studying the regression list and aim at some known areas (Blob with a
+  BOM, empty package.json scripts, hyphen semver ranges). This is not a blind test; a blind control on third-party
+  traffic (test262) is the next step.
 - **1.4.0 vs Zig:** no class passes (k = 116…3,542), almost entirely from changes made on purpose after the merge and
-  listed in the 1.4 changelog, behaviour-equal bundles, and old Zig bugs fixed silently. 23 undocumented divergent
-  sessions remain after a post-hoc review (e.g. `Bun.semver.satisfies("10.10.19", "1.0.0 || a - 0")` true → false).
-- Lessons: keep the intentional-differences registry *before* the window; one A/B pair estimates noise but does not
-  filter it per session (141 noisy test-runner sessions counted as divergences).
+  listed in the 1.4 changelog, behaviour-equal bundles, and old Zig bugs fixed silently. A changelog registry made
+  before the window would still leave ~1.2k divergent sessions; 23 undocumented ones remain after a post-hoc review (e.g. `Bun.semver.satisfies("10.10.19", "1.0.0 || a - 0")` true → false).
+- Lessons: keep the intentional-differences registry *before* the window; one A/B pair of the old version does not
+  filter noise in the new one (141 noisy test-runner sessions counted as divergences) — run the new version twice too
+  (count only A = B and C = C′) or normalize the field.
 
 Raw results (~45 MB of JSONL) are not committed; the generators and runner reproduce them.
 
